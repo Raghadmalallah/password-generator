@@ -17,9 +17,9 @@ A screenshot of the project
 ## Credits
 
 in collabration wiht:
--[https://google.com/](https://google.com/).
--[https://w3school.com/](https://w3school.com/).
--[https://jshint.com/](https://jshint.com/).
--[https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)
+- [https://google.com/](https://google.com/).
+- [https://w3school.com/](https://w3school.com/).
+- [https://jshint.com/](https://jshint.com/).
+- [https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/).
 
 and of course, my Instructor John Desrosiers and Wells Wu (the teacher's assistance) guided me and help me understand the material to complete this project.
