@@ -8,8 +8,16 @@ var onlyNumber = [0,1,2,3,4,5,6,7,8,9];
 
 
 function generatePassword() {
-  // TODO: Your code to generate a password goes here. Be sure to return a password
-  // string. You will need to change the following two lines of code.
+  var length = parseInt(prompt("How many charecters do you want your password to be?"));
+if (length < 8) {
+  alert("The password must be at least 8 characters!");
+  return;
+}
+if (length > 128) {
+  alert("The password must be at least 128 characters!");
+  return;
+}
+
   var password = "password1234";
   return password;
 }
