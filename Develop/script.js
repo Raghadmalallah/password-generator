@@ -82,9 +82,8 @@ if (option.upperCase) {
  var writePassword = finalPassword.join('');
  console.log(writePassword);
 
- document.getElementById("display").textContent = writePassword;
+ document.getElementById("password").textContent = writePassword;
 }
  
-var password ="";
 
 generate.addEventListener('click', generatPassword);
