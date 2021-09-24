@@ -12,8 +12,7 @@ I started analyzing the structure of the HTML and with the Javascript, I started
 ## Usage
 
 A screenshot of the project
-
-    ![alt text](assets/images/screenshot.png)
+[actual footage of the project](assets/_E__bootcamp_homework_password-generator_Develop_index.html.png)
 
 ## Credits
 
