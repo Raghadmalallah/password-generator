@@ -1,51 +1,90 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var generatePassword = document.querySelector("#password");
+var generateBtn = document.getElementById("#generate");
+
 var onlyUppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var onlyLowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var onlySpecialcase = ['#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','['];
-var onlyNumber = [0,1,2,3,4,5,6,7,8,9];
+var onlyNumeric = [0,1,2,3,4,5,6,7,8,9];
 
 
-function generatePassword() {
+function generateOptions() {
   var length = parseInt(prompt("How many charecters do you want your password to be?"));
-if (length < 8) {
-  alert("The password must be at least 8 characters!");
+
+  if (length < 8) {
+  alert('The password must be at least 8 characters!');
   return;
 }
+
 if (length > 128) {
-  alert("The password must be at least 128 characters!");
+  alert('The password must be at least 128 characters!');
   return;
 }
 
-  var password = "password1234";
-  return password;
+var shouldIncludeUppercase = confirm("Do you want to include uppercase characters?");
+
+var shouldIncludeLowercase = confirm("Do you want to include lowercase characters?");
+
+var shouldIncludeNumeric = confirm("Do you want to include numeric characters?");
+
+var shouldIncludeSpecialCharacters = confirm("Do you want to include special characters?");
+    
+    
+if (!shouldIncludeLowercase && !shouldIncludeUppercase && !shouldIncludeNumeric && !shouldIncludeSpecialCharacters) {
+    alert("Your password must contain at least one special, numeric, lowercase, or uppercase character");
+    return;
+ }
+  var passwordOption = {
+    length: length,
+    upperCase: shouldIncludeUppercase,
+    lowerCase: shouldIncludeLowercase,
+    numeric: shouldIncludeNumeric,
+    specialCharacters: shouldIncludeSpecialCharacters,
+  };
+  return passwordOption;
+}
+function generatPassword() {
+
+  var option = generateOptions();
+  console.log(option);
+
+  var passwordHub = [];
+  console.log(passwordHub);
+
+  if (option.specialCharacters) {
+    for (i = 0; i < onlySpecialcase.length; ++i) {
+      passwordHub.push(onlySpecialcase[i]);
+    }
+  } 
+if (option.numeric) {
+  for (i = 0; i < onlyNumeric.length; ++i) {
+    passwordHub.push(onlyNumeric[i]);
+  }
+}
+if (option.lowerCase) {
+  for (i = 0; i < onlyLowercase.length; ++i) {
+    passwordHub.push(onlyLowercase[i]);
+  }
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+if (option.upperCase) {
+  for (i = 0; i < onlyUppercase.length; ++i) {
+    passwordHub.push(onlyUppercase[i]);
+  }
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+ var finalPassword = [];
+ 
+ for (var i = 0; i < option.length; ++i) {
+   var randomPassword = Math.floor(Math.random() * Math.floor(passwordHub.length));
+   finalPassword.push(passwordHub[randomPassword]);
+ }
+ console.log(finalPassword);
 
+ var writePassword = finalPassword.join('');
+ console.log(writePassword);
 
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+ document.getElementById("display").textContent = writePassword;
+}
+ 
+var password ="";
+
+generate.addEventListener('click', generatPassword);
