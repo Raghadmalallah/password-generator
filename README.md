@@ -12,15 +12,14 @@ I started analyzing the structure of the HTML and with the Javascript, I started
 ## Usage
 
 A screenshot of the project
-
-    ![alt text](assets/images/screenshot.png)
+![actual footage of the project](assets/_E__bootcamp_homework_password-generator_Develop_index.html.png)
 
 ## Credits
 
 in collabration wiht:
-[https://google.com/](https://google.com/).
-[https://w3school.com/](https://w3school.com/).
-[https://jshint.com/](https://jshint.com/).
-[https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)
+- [https://google.com/](https://google.com/).
+- [https://w3school.com/](https://w3school.com/).
+- [https://jshint.com/](https://jshint.com/).
+- [https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/).
 
 and of course, my Instructor John Desrosiers and Wells Wu (the teacher's assistance) guided me and help me understand the material to complete this project.
